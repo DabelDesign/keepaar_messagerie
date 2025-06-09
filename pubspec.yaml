@@ -1,0 +1,28 @@
+name: keepaar_messagerie
+description: "Une application de messagerie avec Appwrite et Flutter."
+
+publish_to: 'none' # Garde cette ligne pour éviter la publication accidentelle
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.8.0 <4.0.0' # Version compatible avec Flutter et Dart
+
+dependencies:
+  flutter:
+    sdk: flutter
+  appwrite: ^17.0.1 # Gestion backend Appwrite
+  provider: ^6.1.5 # Gestion d'état simple
+  flutter_bloc: ^9.1.1 # Alternative à Provider
+  cupertino_icons: ^1.0.8 # Icônes iOS pour améliorer l’UI
+  flutter_svg: ^2.0.10 # Support des images SVG
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0 # Bonnes pratiques Flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/logo.svg
