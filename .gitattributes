@@ -1,0 +1,12 @@
+# Normalisation des fins de ligne
+* text=auto
+
+# Empêcher la conversion des fichiers binaires
+*.png binary
+*.jpg binary
+*.gif binary
+*.ttf binary
+*.woff binary
+
+# Optimiser les fichiers Markdown
+*.md diff=markdown
