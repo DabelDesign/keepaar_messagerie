@@ -24,6 +24,8 @@ dependencies:
     sdk: flutter # 🔹 Multilingue
   path_provider: ^2.0.15 # 🔹 Accès aux fichiers locaux
   file_picker: ^10.1.9 # 🔹 Sélection et upload de fichiers
+  google_fonts: ^6.1.0 # 🔹 Support des polices personnalisées (nouveau)
+  firebase_core: ^3.0.0 # 🔹 Ajout Firebase pour extensions éventuelles
 
 dev_dependencies:
   flutter_test:
@@ -35,7 +37,6 @@ flutter:
   assets:
     - .env # ✅ Support Flutter Web
     - assets/images/logo.svg
-    - assets/fonts/ # ✅ Dossier de polices
 
 dependency_overrides:
   device_info_plus: ^11.4.0

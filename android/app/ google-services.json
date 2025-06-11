@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "481475871537",
+    "project_id": "keepaar-9c2fa",
+    "storage_bucket": "keepaar-9c2fa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481475871537:android:1d6adeaa0e2a9c86eee610",
+        "android_client_info": {
+          "package_name": "com.keepaar.messagerie"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoKpMhG0Kc8x3iQ0afIhUEOUWM5P9nlbE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

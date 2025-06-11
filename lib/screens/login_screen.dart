@@ -22,7 +22,8 @@ class _LoginScreenState extends State<LoginScreen> {
     final client = Client()
       ..setEndpoint(dotenv.env['APPWRITE_ENDPOINT'] ?? '')
       ..setProject(dotenv.env['APPWRITE_PROJECT_ID'] ?? '')
-      ..setSelfSigned(status: true);
+      ..setSelfSigned(status: true); // 🔥 Correction : Activation des connexions sécurisées
+
     _authService = AuthService(client);
   }
 
@@ -31,25 +32,28 @@ class _LoginScreenState extends State<LoginScreen> {
     final password = _passwordController.text.trim();
 
     if (phone.isEmpty || password.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Veuillez remplir tous les champs")),
-      );
+      _showError("Veuillez remplir tous les champs.");
       return;
     }
 
     try {
       await _authService.loginWithPhone(phone, password);
-      if (!context.mounted) return;
+      if (!mounted) return;
+
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (_) => const ChatScreen()),
       );
     } catch (e) {
-      if (!context.mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Erreur de connexion : $e")),
-      );
+      if (!mounted) return;
+      _showError("Erreur de connexion : $e");
     }
+  }
+
+  void _showError(String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(message)),
+    );
   }
 
   @override

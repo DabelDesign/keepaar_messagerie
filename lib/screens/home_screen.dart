@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'chat_screen.dart'; // ✅ Ajout de l’import de l’écran de chat
+import 'package:flutter_svg/flutter_svg.dart'; // ✅ Support des SVG
+import 'chat_screen.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -13,27 +15,40 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // ✅ Ajout d'un logo (remplace 'assets/images/logo.png' par ton vrai logo)
-          Image.asset(
-            'assets/images/logo.png',
+          // ✅ Logo adaptable (SVG ou Texte si l’image n’existe pas)
+          SizedBox(
             width: 150,
             height: 150,
+            child: SvgPicture.asset(
+              'assets/images/logo.svg', // 📌 Remplace par ton vrai logo SVG
+              placeholderBuilder: (context) => const Icon(
+                Icons.chat_bubble, // ✅ Icône par défaut si logo absent
+                size: 100,
+                color: Colors.deepPurple,
+              ),
+            ),
           ),
+
           const SizedBox(height: 20), // ✅ Espacement
           const Text(
             "Bienvenue sur Keepaar Messagerie !",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
+
           const SizedBox(height: 20), // ✅ Espacement
           ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+            ),
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const ChatScreen()),
               );
             },
-            child: const Text("Accéder au chat"),
+            child: const Text("Accéder au chat", style: TextStyle(fontSize: 18)),
           ),
         ],
       ),
