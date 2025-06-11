@@ -1,42 +1,29 @@
 import 'package:appwrite/appwrite.dart';
+import 'package:flutter/foundation.dart';
 
 class AuthService {
-  final Client _client = Client()
-    ..setEndpoint('https://cloud.appwrite.io/v1') // Remplace par ton endpoint
-    ..setProject('your_project_id'); // Remplace par ton ID de projet
-
   final Account _account;
 
-  AuthService() : _account = Account(Client());
+  AuthService(Client client) : _account = Account(client);
 
-  Future<String?> loginWithPhone(String phoneNumber) async {
+  Future<void> loginWithPhone(String phoneNumber, String password) async {
     try {
-      final session = await _account.createPhoneSession(
-        userId: ID.unique(),
-        phone: phoneNumber,
+      final session = await _account.createSession(
+        userId: phoneNumber,
+        secret: password,
       );
-      return session.$id; // Retourne l’ID de session
+      debugPrint("✅ Session créée : ${session.$id}");
     } catch (e) {
-      print("Erreur d’authentification : $e");
-      return null;
+      debugPrint("❌ Erreur login téléphone : $e");
     }
   }
 
   Future<void> logout() async {
     try {
       await _account.deleteSessions();
-      print("Utilisateur déconnecté !");
+      debugPrint("✅ Déconnexion réussie !");
     } catch (e) {
-      print("Erreur lors de la déconnexion : $e");
-    }
-  }
-
-  Future<bool> isUserLoggedIn() async {
-    try {
-      final session = await _account.getSession(sessionId: 'current');
-      return session.$id.isNotEmpty; // Retourne `true` si session active
-    } catch (e) {
-      return false;
+      debugPrint("❌ Erreur de déconnexion : $e");
     }
   }
 }

@@ -1,28 +1,45 @@
 name: keepaar_messagerie
 description: "Une application de messagerie avec Appwrite et Flutter."
 
-publish_to: 'none' # Garde cette ligne pour éviter la publication accidentelle
+publish_to: 'none' # 🔹 Évite la publication accidentelle
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.8.0 <4.0.0' # Version compatible avec Flutter et Dart
+  sdk: '>=3.8.0 <4.0.0' # 🔹 Version compatible avec Flutter & Dart
 
 dependencies:
   flutter:
     sdk: flutter
-  appwrite: ^17.0.1 # Gestion backend Appwrite
-  provider: ^6.1.5 # Gestion d'état simple
-  flutter_bloc: ^9.1.1 # Alternative à Provider
-  cupertino_icons: ^1.0.8 # Icônes iOS pour améliorer l’UI
-  flutter_svg: ^2.0.10 # Support des images SVG
+  appwrite: ^17.0.1
+  provider: ^6.1.5 # 🔹 Gestion d'état simple
+  flutter_bloc: ^9.1.1 # 🔹 Alternative à Provider
+  cupertino_icons: ^1.0.8 # 🔹 Icônes iOS pour UI
+  flutter_svg: ^2.0.10 # 🔹 Support des images SVG
+  flutter_dotenv: ^5.2.1 # 🔹 Variables d’environnement
+  http: ^1.1.0 # 🔹 Gestion des requêtes API
+  shared_preferences: ^2.2.2 # 🔹 Stockage local des préférences utilisateur
+  intl: 0.20.2 # 🔹 Gestion des dates et formats internationaux
+  flutter_localizations:
+    sdk: flutter # 🔹 Multilingue
+  path_provider: ^2.0.15 # 🔹 Accès aux fichiers locaux
+  file_picker: ^10.1.9 # 🔹 Sélection et upload de fichiers
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^6.0.0 # Bonnes pratiques Flutter
+  flutter_lints: ^6.0.0 # 🔹 Bonnes pratiques Flutter
 
 flutter:
   uses-material-design: true
   assets:
+    - .env # ✅ Support Flutter Web
     - assets/images/logo.svg
+    - assets/fonts/ # ✅ Dossier de polices
+
+dependency_overrides:
+  device_info_plus: ^11.4.0
+  material_color_utilities: ^0.13.0
+  meta: ^1.17.0
+  vector_math: ^2.2.0
+  win32_registry: ^2.1.0
