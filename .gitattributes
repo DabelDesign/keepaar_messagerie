@@ -1,12 +1,20 @@
-# Normalisation des fins de ligne
+# 🔹 Normalisation des fins de ligne pour éviter les conflits Windows/Linux/macOS
 * text=auto
 
-# Empêcher la conversion des fichiers binaires
+# 🔹 Empêcher la conversion des fichiers binaires (images, polices, etc.)
 *.png binary
 *.jpg binary
 *.gif binary
 *.ttf binary
 *.woff binary
+*.mp4 binary
+*.mp3 binary
 
-# Optimiser les fichiers Markdown
+# 🔹 Optimisation du diff pour certains fichiers texte
 *.md diff=markdown
+*.yaml diff=yaml
+*.json diff=json
+*.dart diff=perl
+
+# 🔹 Git ignore les clés API dans .env par sécurité (déjà dans .gitignore, mais on renforce)
+.env export-ignore
