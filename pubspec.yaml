@@ -1,46 +1,53 @@
 name: keepaar_messagerie
 description: "Une application de messagerie avec Appwrite et Flutter."
 
-publish_to: 'none' # 🔹 Évite la publication accidentelle
+publish_to: 'none' # 🔹 Évite la publication accidentelle sur pub.dev
 
-version: 1.0.0+1
+version: 1.0.0+1 # 🔹 Version actuelle de l'application
 
 environment:
-  sdk: '>=3.8.0 <4.0.0' # 🔹 Version compatible avec Flutter & Dart
+  sdk: '>=3.8.0 <4.0.0' # 🔹 Définition de la version minimale de Dart compatible
 
 dependencies:
   flutter:
-    sdk: flutter
-  appwrite: ^17.0.1
-  provider: ^6.1.5 # 🔹 Gestion d'état simple
-  flutter_bloc: ^9.1.1 # 🔹 Alternative à Provider
-  cupertino_icons: ^1.0.8 # 🔹 Icônes iOS pour UI
-  flutter_svg: ^2.0.10 # 🔹 Support des images SVG
-  flutter_dotenv: ^5.2.1 # 🔹 Variables d’environnement
-  http: ^1.1.0 # 🔹 Gestion des requêtes API
-  shared_preferences: ^2.2.2 # 🔹 Stockage local des préférences utilisateur
+    sdk: flutter # 🔹 Inclusion du SDK Flutter
+  appwrite: ^17.0.1 # 🔹 SDK Appwrite pour gérer l'authentification et la base de données
+  provider: ^6.1.5 # 🔹 Gestion d'état simplifiée pour Flutter
+  flutter_bloc: ^9.1.1 # 🔹 Alternative à Provider, permet une gestion plus structurée de l'état
+  cupertino_icons: ^1.0.8 # 🔹 Bibliothèque d'icônes pour iOS
+  flutter_svg: ^2.0.10 # 🔹 Ajout du support pour les fichiers SVG dans l'application
+  flutter_dotenv: ^5.2.1 # 🔹 Gestion des variables d'environnement (.env)
+  http: ^1.1.0 # 🔹 Permet de faire des requêtes API HTTP
+  shared_preferences: ^2.2.2 # 🔹 Stockage de données locales pour l'utilisateur (comme ses préférences)
   intl: 0.20.2 # 🔹 Gestion des dates et formats internationaux
   flutter_localizations:
-    sdk: flutter # 🔹 Multilingue
-  path_provider: ^2.0.15 # 🔹 Accès aux fichiers locaux
-  file_picker: ^10.1.9 # 🔹 Sélection et upload de fichiers
-  google_fonts: ^6.1.0 # 🔹 Support des polices personnalisées (nouveau)
-  firebase_core: ^3.0.0 # 🔹 Ajout Firebase pour extensions éventuelles
+    sdk: flutter # 🔹 Ajout du support multilingue pour l'application
+  path_provider: ^2.0.15 # 🔹 Accès aux fichiers et aux dossiers locaux
+  file_picker: ^10.1.9 # 🔹 Permet à l'utilisateur de sélectionner et d'envoyer des fichiers
+  google_fonts: ^6.1.0 # 🔹 Ajout de polices personnalisées pour l'interface
+  firebase_core: ^3.14.0 # 🔹 Intégration de Firebase pour l'utilisation de ses services
+  firebase_messaging: ^15.2.7 # 🔹 Notifications push avec Firebase Cloud Messaging
+  firebase_auth: ^5.6.0 # 🔹 Authentification des utilisateurs avec Firebase
+  firebase_storage: ^12.4.7 # 🔹 Stockage de fichiers et images dans Firebase
+  cloud_firestore: ^5.6.9 # 🔹 Base de données Firebase pour stocker les messages
 
 dev_dependencies:
   flutter_test:
-    sdk: flutter
-  flutter_lints: ^6.0.0 # 🔹 Bonnes pratiques Flutter
+    sdk: flutter # 🔹 Bibliothèque pour tester l'application
+  flutter_lints: ^6.0.0 # 🔹 Règles de bonnes pratiques pour améliorer la qualité du code
 
 flutter:
-  uses-material-design: true
+  uses-material-design: true # 🔹 Activation du design Material pour les widgets Flutter
   assets:
-    - .env # ✅ Support Flutter Web
-    - assets/images/logo.svg
+    - .env # ✅ Inclusion du fichier .env pour les configurations sensibles
+    - assets/images/logo.svg # ✅ Ajout d’un logo en format SVG utilisé dans l’app
 
 dependency_overrides:
-  device_info_plus: ^11.4.0
+  device_info_plus: ^11.4.0 # 🔹 Ajout de dépendances spécifiques en override pour compatibilité
   material_color_utilities: ^0.13.0
   meta: ^1.17.0
   vector_math: ^2.2.0
   win32_registry: ^2.1.0
+  # Fichier de configuration du projet Flutter
+  # Définit les dépendances, les versions et les ressources utilisées
+  # Localisation : C:\Users\ibras\FlutterProjects\keepaar_messagerie\pubspec.yaml

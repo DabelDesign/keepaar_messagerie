@@ -86,3 +86,11 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
+// 📌 Écran de connexion de l'application
+// 📍 Chemin : C:\Users\ibras\FlutterProjects\keepaar_messagerie\lib\screens\login_screen.dart
+//
+// Ce fichier gère :
+// ✅ L'authentification des utilisateurs via Appwrite
+// ✅ La validation des champs (téléphone et mot de passe)
+// ✅ La gestion des erreurs et affichage des messages via `ScaffoldMessenger`
+// ✅ La navigation vers l'écran de chat après connexion réussie

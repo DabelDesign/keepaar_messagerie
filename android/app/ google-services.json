@@ -7,6 +7,25 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:481475871537:android:5c6f83582dbfdc16eee610",
+        "android_client_info": {
+          "package_name": "com.example.keepaar_messagerie"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoKpMhG0Kc8x3iQ0afIhUEOUWM5P9nlbE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:481475871537:android:1d6adeaa0e2a9c86eee610",
         "android_client_info": {
           "package_name": "com.keepaar.messagerie"

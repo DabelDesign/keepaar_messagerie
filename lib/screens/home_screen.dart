@@ -55,3 +55,11 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+// 📌 Écran d'accueil de l'application
+// 📍 Chemin : C:\Users\ibras\FlutterProjects\keepaar_messagerie\lib\screens\home_screen.dart
+//
+// Ce fichier gère :
+// ✅ L'affichage du logo et du message de bienvenue
+// ✅ La navigation vers l'écran de chat
+// ✅ L'utilisation de SVG pour un logo adaptable
+// ✅ La mise en page avec `Column` et `SizedBox` pour un design structuré

@@ -27,3 +27,11 @@ class AuthService {
     }
   }
 }
+// 📌 Service d'authentification avec Appwrite
+// 📍 Chemin : C:\Users\ibras\FlutterProjects\keepaar_messagerie\lib\services\auth_service.dart
+//
+// Ce fichier gère :
+// ✅ La connexion des utilisateurs via Appwrite
+// ✅ La création de session avec un numéro de téléphone et un mot de passe
+// ✅ La gestion de la déconnexion et suppression des sessions
+// ✅ L'affichage des erreurs et des logs pour le debug
